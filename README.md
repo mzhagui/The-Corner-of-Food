@@ -118,7 +118,7 @@ src
       |__ PostCreate.jsx 
       |__ PostEdit.jsx    
       |__ Reviews.jsx  
-      |__Login.jsx
+      |__ Login.jsx
       |__ Register.jsx 
 |__ services/
       |__api-config.js
