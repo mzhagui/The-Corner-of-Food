@@ -1,3 +1,4 @@
+import './Layout.css'
 import { Link } from 'react-router-dom';
 
 export default function Layout(props) {
@@ -6,10 +7,11 @@ export default function Layout(props) {
   return (
     <div>
       <header>
-      <h1>The Corner of Food</h1>
+        <Link to="/">The Corner of Food</Link>
+        <Link to='/posts'>All Places to Eat</Link>
         {currentUser ? (
           <div>
-            <p>{currentUser.username}</p>
+            <p>Welcome, {currentUser.username}</p>
             <button onClick={handleLogout}>Logout</button>
           </div>
         ) : (
@@ -19,11 +21,11 @@ export default function Layout(props) {
         {currentUser && (
           <div>
             <Link to='/posts'>Posts</Link>
-            <Link to='/reviews'>Reviews</Link>
           </div>
-        )} 
+        )}
+        
        </header> 
-       {children}
+      {children}
     </div>
   );
 }

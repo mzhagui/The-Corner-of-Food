@@ -8,6 +8,7 @@ export default function Posts(props) {
       {posts.map((post) => (
         <div key={post.id}>
           <Link to={`/posts/${post.id}`}>
+            <img className="unique"src={post.img_url}/>
             <p>{post.title}</p>
           </Link>
           <Link to={`/posts/${post.id}/edit`}>

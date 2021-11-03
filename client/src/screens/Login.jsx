@@ -1,5 +1,6 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import './Login.css'
 
 export default function Login(props) {
   const [formData, setFormData] = useState({
@@ -18,8 +19,13 @@ export default function Login(props) {
   };
 
   return (
-    <form
-      onSubmit={(e) => {
+    <div className="login_container">
+      <div className="login_side">
+        <h3>The Corner of Food</h3>
+        <p>Welcome back, please log in to continue posting your all time faves!</p>
+      </div>
+      <div>
+    <form onSubmit={(e) => {
         e.preventDefault();
         handleLogin(formData);
       }}
@@ -47,6 +53,10 @@ export default function Login(props) {
       <br />
       <Link to='/register'>Register</Link>
       <button>Submit</button>
-    </form>
+
+        </form>
+        </div>
+      </div>
+    
   );
 }
