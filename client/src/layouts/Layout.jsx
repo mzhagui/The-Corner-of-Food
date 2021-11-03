@@ -6,8 +6,8 @@ export default function Layout(props) {
 
   return (
     <div>
-      <header>
-        <Link to="/">The Corner of Food</Link>
+      <header className="nav">
+        <Link to="/" className="main_title">The Corner of Food</Link>
         <Link to='/posts'>All Places to Eat</Link>
         {currentUser ? (
           <div>
@@ -15,7 +15,10 @@ export default function Layout(props) {
             <button onClick={handleLogout}>Logout</button>
           </div>
         ) : (
-       <Link to='/login'>Login/Register</Link>
+            <div>
+            <Link to='/login'>Login</Link>
+            <Link to='/register'>Register</Link>
+</div>
         )}
         <hr />
         {currentUser && (

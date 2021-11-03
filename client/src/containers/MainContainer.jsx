@@ -3,12 +3,14 @@ import { Switch, Route, useHistory } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import profile from "../assets/profile.png"
 
-import { deletePost, getAllPosts } from '../services/posts';
+import { deletePost, getAllPosts, newPost } from '../services/posts';
 import Posts from '../screens/Posts';
+import PostCreate from '../screens/PostCreate';
 import PostDetail from '../screens/PostDetail';
 
 export default function MainContainer() {
   const [posts, setPosts] = useState([]);
+  const history = useHistory()
   useEffect(() => {
     const fetchPosts = async () => {
       const postList = await getAllPosts();
@@ -22,6 +24,12 @@ export default function MainContainer() {
     setPosts((prevState) => prevState.filter((post) => post.id !== id));
   };
 
+  const handlePostCreate = async (formData) => {
+    const newPost = await newPost(formData);
+    setPosts((prevState) => [...prevState, newPost]);
+    history.push('/posts');
+  };
+
   return (
     <div>
        <img className="background_pic" src={profile} />
@@ -32,7 +40,10 @@ export default function MainContainer() {
       </Route>
         <Route exact path='/posts/:id'>
           <PostDetail/>
-      </Route>
+        </Route>
+        <Route exact path='/posts/new'>
+          <PostCreate handlePostCreate={handlePostCreate}/>
+        </Route>
       </Switch>
       </div>
     

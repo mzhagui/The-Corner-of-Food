@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Login.css'
+import login from '../assets/login.png'
 
 export default function Login(props) {
   const [formData, setFormData] = useState({
@@ -23,8 +24,9 @@ export default function Login(props) {
       <div className="login_side">
         <h3>The Corner of Food</h3>
         <p>Welcome back, please log in to continue posting your all time faves!</p>
+        <img className="login_image"src={login}/>
       </div>
-      <div>
+      <div className="info_login">
     <form onSubmit={(e) => {
         e.preventDefault();
         handleLogin(formData);
@@ -51,8 +53,8 @@ export default function Login(props) {
         />
       </label>
       <br />
-      <Link to='/register'>Register</Link>
-      <button>Submit</button>
+      Not a Member Yet? <Link to='/register'>Register</Link>
+      <button className="login_button">Submit</button>
 
         </form>
         </div>
