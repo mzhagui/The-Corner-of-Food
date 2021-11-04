@@ -2,7 +2,7 @@ import './App.css';
 
 import { useState, useEffect } from 'react';
 import { Switch, Route, useHistory } from 'react-router-dom';
-
+import { Redirect } from 'react-router';
 import Layout from './layouts/Layout';
 import Login from './screens/Login';
 import Posts from './screens/Posts';
@@ -54,7 +54,7 @@ function App() {
       <Layout currentUser={currentUser} handleLogout={handleLogout}>
         <Switch>
         <Route path='/posts/:id/edit'>
-        <PostEdit  />
+        {currentUser ? <PostEdit currentUser={currentUser} /> : <Redirect to="/login" />}
       </Route>
         <Route path='/posts/new'>
           <PostCreate />

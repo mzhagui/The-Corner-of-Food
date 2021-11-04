@@ -1,7 +1,8 @@
 // import { useState, useEffect } from 'react';
 // import { Switch, Route, useHistory } from 'react-router-dom';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import profile from "../assets/profile.png"
+import './MainContainer.css'
 
 // import { deletePost, getAllPosts, newPost } from '../services/posts';
 // import Posts from '../screens/Posts';
@@ -32,9 +33,9 @@ export default function MainContainer() {
 
   return (
 
-    <div> 
+    <div className="button_container"> 
        <img className="background_pic" src={profile} />
-      {/* <Link to="/" >Take Me There</Link> */}
+      <Link className="link-a" to="/posts" >Take Me There</Link>
  
     
    </div>

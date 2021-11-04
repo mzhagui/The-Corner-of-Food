@@ -36,9 +36,7 @@ export default function Posts(props) {
           <button onClick={() => handlePostDelete(post.id)}>delete</button>
         </div>
       ))}
-      <Link to='/posts/new'>
-        Add a New Place
-      </Link>
+    
       </div>
       </div>
   );

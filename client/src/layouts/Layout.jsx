@@ -23,7 +23,7 @@ export default function Layout(props) {
         <hr />
         {currentUser && (
           <div>
-            <Link to='/posts'>Posts</Link>
+            <Link to='/posts/new'>Add a New Place</Link>
           </div>
         )}
         
