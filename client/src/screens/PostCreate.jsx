@@ -1,35 +1,75 @@
 import { useState } from "react";
+import { newPost } from "../services/posts";
+import { Redirect } from "react-router";
 
 export default function PostCreate(props) {
-  const [formData, setFormData] = useState({
+  const [posts,setPosts] = useState({
     title: '',
     address: '',
     food_description: '',
     img_url: ''
   })
+  
+  const [isCreated, setCreated] = useState(false);
 
-  const { title, address, food_description, img_url } = formData;
-  const { handlePostCreate } = props;
 
   const handleChange = (e) => {
-    const { value } = e.target;
-    setFormData({
-      title: value,
+    const { name, value } = e.target;
+    setPosts({
+      ...posts,
+      [name]:value
     });
   };
+  const handleSubmit = async (event) => {
+    event.preventDefault()
+    const created = await newPost(posts)
+    setCreated({ created })
+  }
+
+  if (isCreated) {
+    return <Redirect to={`/posts`} />
+  }
 
   return (
      <form
-      onSubmit={(e) => {
-        e.preventDefault();
-        handlePostCreate(formData);
-      }}
-    >
+      onSubmit={handleSubmit}>
       <h1>Create Food</h1>
-      <label>
-        Name:
-        <input type='text' value={title} onChange={handleChange} />
-      </label>
+      <input
+          className='input-name'
+          placeholder='Title'
+          value={posts.title}
+          name='title'
+          required
+          autoFocus
+          onChange={handleChange}
+      />
+      <input
+          className='input-name'
+          placeholder='Address'
+          value={posts.address}
+          name='address'
+          required
+          autoFocus
+          onChange={handleChange}
+      />
+      <input
+          className='input-name'
+          placeholder='Description'
+          value={posts.food_description}
+          name='food_description'
+          required
+          autoFocus
+          onChange={handleChange}
+      />
+      <input
+          className='input-name'
+          placeholder='Image URL'
+          value={posts.img_url}
+          name='img_url'
+          required
+          autoFocus
+          onChange={handleChange}
+        />
       <br />
       <button>Submit</button>
     </form>

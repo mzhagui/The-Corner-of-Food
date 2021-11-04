@@ -23,9 +23,9 @@ console.log(postItem)
       <h1>{postItem?.title}</h1>
       <p>{postItem?.address}</p>
       <h2>{postItem?.food_description}</h2>
-      <h4>Write a review ... </h4>
+      {/* <h4>Write a review ... </h4>
       <h5>{postItem?.reviews[0].rating}</h5>
-      <h5>{postItem?.reviews[0].description}</h5>
+      <h5>{postItem?.reviews[0].description}</h5> */}
 
     </div>
     

@@ -5,6 +5,10 @@ import { Switch, Route, useHistory } from 'react-router-dom';
 
 import Layout from './layouts/Layout';
 import Login from './screens/Login';
+import Posts from './screens/Posts';
+import PostCreate from './screens/PostCreate';
+import PostDetail from './screens/PostDetail';
+import PostEdit from './screens/PostEdit'
 
 import {
   loginUser,
@@ -49,6 +53,18 @@ function App() {
     <div className='App'>
       <Layout currentUser={currentUser} handleLogout={handleLogout}>
         <Switch>
+        <Route path='/posts/:id/edit'>
+        <PostEdit  />
+      </Route>
+        <Route path='/posts/new'>
+          <PostCreate />
+        </Route>
+        <Route path='/posts/:id'>
+          <PostDetail/>
+        </Route>
+        <Route path='/posts'>
+        <Posts  />
+      </Route>
           <Route exact path='/login'>
             <Login handleLogin={handleLogin} />
           </Route>

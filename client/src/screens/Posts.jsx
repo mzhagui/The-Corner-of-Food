@@ -1,12 +1,31 @@
+ import { useState, useEffect } from 'react';
+ import {  useHistory } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import { deletePost, getAllPosts } from '../services/posts';
+import './Posts.css'
 
 export default function Posts(props) {
-  const { posts, handlePostDelete } = props;
+  const [posts, setPosts] = useState([]);
+  useEffect(() => {
+    const fetchPosts = async () => {
+      const postList = await getAllPosts();
+      setPosts(postList);
+    };
+    fetchPosts();
+  }, []);
+  const handlePostDelete = async (id) => {
+    await deletePost(id);
+    setPosts((prevState) => prevState.filter((post) => post.id !== id));
+  };
+  
   return (
     <div>
-      <h3>Posts</h3>
+    <h3>Places to Eat</h3>
+
+    <div className="post_container">
+      
       {posts.map((post) => (
-        <div key={post.id}>
+        <div className="posts"key={post.id}>
           <Link to={`/posts/${post.id}`}>
             <img className="unique"src={post.img_url}/>
             <p>{post.title}</p>
@@ -18,8 +37,9 @@ export default function Posts(props) {
         </div>
       ))}
       <Link to='/posts/new'>
-        <button>Add a New Place</button>
+        Add a New Place
       </Link>
-    </div>
+      </div>
+      </div>
   );
 }
