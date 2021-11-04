@@ -4,17 +4,23 @@ height:100vh;
 }
 
 .nav{
-  background-color: aqua;
+  background-color: white;
   display: flex;
+  font-family: 'Raleway', sans-serif;
   align-items: center;
-  padding:20px;
+  padding:25px;
   font-size:20px;
   text-decoration: none;
 }
 
 a{
   color: black;
+  text-align: center;
   
+}
+
+.navBarLink {
+  margin: 10px;
 }
 
 .main_title{

@@ -19,6 +19,7 @@ export default function EditItem(props) {
     };
     fetchPost();
   }, [id]);
+  
   const handleChange = (event) => {
     const { name, value } = event.target;
     setPost({

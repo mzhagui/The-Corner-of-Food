@@ -33,6 +33,7 @@ export default function Posts(props) {
           <Link to={`/posts/${post.id}/edit`}>
             <button>edit</button>
           </Link>
+          <button onClick={()=> console.log(posts)}> </button>
           <button onClick={() => handlePostDelete(post.id)}>delete</button>
         </div>
       ))}

@@ -23,7 +23,7 @@ export default function Login(props) {
     <div className="login_container">
       <div className="login_side">
         <h3>The Corner of Food</h3>
-        <p>Welcome back, please log in to continue posting your all time faves!</p>
+        <p>Welcome back, please log in to edit, delete and continue posting your all time faves!</p>
         <img className="login_image"src={login}/>
       </div>
       <div className="info_login">

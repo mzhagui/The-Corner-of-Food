@@ -8,22 +8,24 @@ export default function Layout(props) {
     <div>
       <header className="nav">
         <Link to="/" className="main_title">The Corner of Food</Link>
-        <Link to='/posts'>All Places to Eat</Link>
+        <Link className="navBarLink" to='/posts'>All Places to Eat</Link>
         {currentUser ? (
           <div>
-            <p>Welcome, {currentUser.username}</p>
-            <button onClick={handleLogout}>Logout</button>
+          <Link to='/posts/new'>Add a New Place</Link>
+
           </div>
         ) : (
             <div>
-            <Link to='/login'>Login</Link>
-            <Link to='/register'>Register</Link>
+            <Link  className="navBarLink"  to='/login'>Login</Link>
+            <Link className="navBarLink"  to='/register'>Register</Link>
 </div>
         )}
         <hr />
         {currentUser && (
           <div>
-            <Link to='/posts/new'>Add a New Place</Link>
+            <p>Welcome, {currentUser.username}</p>
+            <button onClick={handleLogout}>Logout</button>
+
           </div>
         )}
         
