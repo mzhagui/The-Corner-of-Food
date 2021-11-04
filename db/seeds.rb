@@ -15,7 +15,7 @@ User.destroy_all
 puts "#{User.count} users created"
 
 @post1 = Post.create!(title: 'BirriaLandia', address: '77-99 Roosevelt Ave, Queens, NY 11372', food_description: "Started of as any regular food truck standing outside of Roosevelt Avenue in Queens NY. Suddenly, with the power of social media, Birria-Landia blew up. Now, there is a daily line for New Yorkers to try out this mexican delight. Birria-Landia, offers birria tacos, quesadillas and consome. Birria is made out of lamb or beef meat, and is cooked for many hours to offer its juicy , soft meat. It is then made into tacos and fried up with the same beef broth it was cooked with. The best way to enjoy some tacos de birria is to grab the consome (beef broth) and dip into it. Don’t believe this Mexican delight, go try it out yourself, just outside the 7 train!", img_url: "https://cdn.vox-cdn.com/thumbor/nTpqtfjOli8FS8tQ3-PnocNiZd0=/0x0:1800x1440/1820x1213/filters:focal(756x576:1044x864):format(webp)/cdn.vox-cdn.com/uploads/chorus_image/image/68768106/Image_from_iOS__1_.0.jpg", user: @admin)
-@post2 = Post.create!(title: 'test', address: 'test', food_description: 'test', img_url: 'https://picsum.photos/', user: @user1)
+@post2 = Post.create!(title: '969 NYC Coffee', address: '37-61 80th St. Jackson Heights, NY 11372', food_description: 'The best onigiri spot. This is a Japenese delight. Everything includes rice. From, onigiri to pork sandwiches, to sushi and matcha. The owner is very nice and polite', img_url: 'https://s3-media0.fl.yelpcdn.com/bphoto/xbldsErkTNqNmoj6IrzfGg/l.jpg', user: @user1)
 
 puts "#{Post.count} posts created"
 
