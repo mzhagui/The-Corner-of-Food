@@ -33,9 +33,9 @@ export default function PostCreate(props) {
   return (
      <form
       onSubmit={handleSubmit}>
-      <h1>Create Food</h1>
+      <h1>Create Food Post</h1>
       <input
-          className='input-name'
+          className='input-title'
           placeholder='Title'
           value={posts.title}
           name='title'

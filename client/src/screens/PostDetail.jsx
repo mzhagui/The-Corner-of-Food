@@ -42,7 +42,7 @@ export default function PostDetail(props) {
   }
 
   if (isCreated) {
-    return <Redirect to={`/posts`} />
+    return <Redirect to={`/posts/${id}`} />
   }
 
   console.log(postItem)
@@ -54,33 +54,37 @@ export default function PostDetail(props) {
       <p>{postItem?.address}</p>
       <h3>{postItem?.food_description}</h3>
       <div>
-        <h1>Write a Review...</h1>
-        <form onSubmit={handleSubmit}>
-          <input
-            className='input-name'
-            placeholder='Rating'
-            value={reviews.rating}
-            name='rating'
-            required
-            autoFocus
-            onChange={handleChange}
-          />
-          <input
-            className='input-name'
-            placeholder='Why you love it?'
-            value={reviews.description}
-            name='description'
-            required
-            autoFocus
-            onChange={handleChange}
-          />
-          <button>Submit Review</button>
-        </form>
+     
+          <h1>Write a Review...</h1>
+          <form onSubmit={handleSubmit}>
+            <input
+              className='input-name'
+              placeholder='Rating'
+              value={reviews.rating}
+              name='rating'
+              required
+              autoFocus
+              onChange={handleChange}
+            />
+            <input
+              className='input-name'
+              placeholder='Why you love it?'
+              value={reviews.description}
+              name='description'
+              required
+              autoFocus
+              onChange={handleChange}
+            />
+            <button>Submit Review</button>
+          </form>
+      
+}
         <div>
         {postItem?.reviews.map((post) => (
         <div className="posts"key={post.id}>
             <p>{post?.rating}</p>
             <p>{post?.description}</p>
+            <p>{post?.created_at}</p>
             
 
         </div>

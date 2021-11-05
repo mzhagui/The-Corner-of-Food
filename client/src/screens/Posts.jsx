@@ -28,10 +28,10 @@ export default function Posts(props) {
         <div className="posts"key={post.id}>
           <Link to={`/posts/${post.id}`}>
             <img className="unique"src={post.img_url} alt="unique"/>
-            <p>{post.title}</p>
+            <p className="post_title">{post.title}</p>
           </Link>
-          {currentUser?.id === post?.user_id ? <> <Link to={`/posts/${post.id}/edit`}><button>Edit</button></Link> 
-          <button onClick={() => handlePostDelete(post.id)}>Delete</button> </>
+          {currentUser?.id === post?.user_id ? <> <Link to={`/posts/${post.id}/edit`}><button className = "edit"></button></Link> 
+          <button className="delete" onClick={() => handlePostDelete(post.id)}></button> </>
             :""}
 
         </div>
