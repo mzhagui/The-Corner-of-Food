@@ -60,14 +60,14 @@ function App() {
           <PostCreate />
         </Route>
         <Route path='/posts/:id'>
-          <PostDetail/>
+            <PostDetail currentUser={currentUser}/>
         </Route>
         <Route path='/posts'>
         <Posts currentUser={currentUser} />
       </Route>
-          <Route exact path='/login'>
-            <Login handleLogin={handleLogin} />
-          </Route>
+      <Route exact path='/login'>
+          <Login handleLogin={handleLogin} />
+      </Route>
          <Route exact path='/register'>
             <Register handleRegister={handleRegister} />
           </Route>

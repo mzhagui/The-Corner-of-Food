@@ -7,7 +7,7 @@ import './MainContainer.css'
 export default function MainContainer() {
   return (
     <div className="button_container"> 
-       <img className="background_pic" src={profile} />
+       <img className="background_pic" src={profile} alt="background"/>
       <Link className="link-a" to="/posts" >Take Me There</Link>
  
     

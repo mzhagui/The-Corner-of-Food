@@ -24,7 +24,7 @@ export default function Login(props) {
       <div className="login_side">
         <h3>The Corner of Food</h3>
         <p>Welcome back, please log in to edit, delete and continue posting your all time faves!</p>
-        <img className="login_image"src={login}/>
+        <img className="login_image"src={login} alt="login"/>
       </div>
       <div className="info_login">
     <form onSubmit={(e) => {
@@ -32,12 +32,13 @@ export default function Login(props) {
         handleLogin(formData);
       }}
     >
-      <h3>Login</h3>
+          <h3>Login</h3>
       <label>
-        Username:
-        <input
+            Username:
+            <input
           type='text'
           name='username'
+          placeholder="Enter your username"
           value={username}
           onChange={handleChange}
         />
@@ -47,6 +48,7 @@ export default function Login(props) {
         Password:
         <input
           type='password'
+          placeholder = "Enter your password"
           name='password'
           value={password}
           onChange={handleChange}
@@ -54,7 +56,7 @@ export default function Login(props) {
       </label>
       <br />
       Not a Member Yet? <Link to='/register'>Register</Link>
-      <button className="login_button">Submit</button>
+      <button className="login_button">Sign In</button>
 
         </form>
         </div>

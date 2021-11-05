@@ -24,7 +24,7 @@ export default function Register(props) {
     <div className="login_side">
       <h3>The Corner of Food</h3>
       <p>Sign up to create your own food posts. Share us your favorite eats in Queens, NY</p>
-      <img className="login_image"src={register}/>
+      <img className="login_image"src={register} alt="login"/>
     </div>
     <div className="info_login">
     <form
@@ -38,6 +38,7 @@ export default function Register(props) {
         Username:
         <input
           type='text'
+          placeholder="Enter Username *"
           name='username'
           value={username}
           onChange={handleChange}
@@ -46,20 +47,26 @@ export default function Register(props) {
       <br />
       <label>
         Email:
-        <input type='text' name='email' value={email} onChange={handleChange} />
+        <input type='text'
+          name='email'
+          placeholder = "name@email.com *"
+          value={email}
+          onChange={handleChange} />
       </label>
       <br />
       <label>
         Password:
         <input
           type='password'
+          placeholder="At Least 6 Characters *"
           name='password'
           value={password}
           onChange={handleChange}
         />
       </label>
-      <br />
-      <button>Submit</button>
+          <br />
+         <p className="required"> * Required Fields </p>
+      <button className="login_button">Create Account</button>
         </form>
       </div>
       </div>

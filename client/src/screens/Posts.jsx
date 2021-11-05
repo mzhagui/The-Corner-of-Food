@@ -1,5 +1,4 @@
  import { useState, useEffect } from 'react';
- import {  useHistory } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { deletePost, getAllPosts } from '../services/posts';
 import './Posts.css'
@@ -21,17 +20,18 @@ export default function Posts(props) {
   };
   return (
     <div>
-    <h3>Places to Eat</h3>
+    <h3 className="post_h3">Places to Eat</h3>
 
     <div className="post_container">
 
       {posts.map((post) => (
         <div className="posts"key={post.id}>
           <Link to={`/posts/${post.id}`}>
-            <img className="unique"src={post.img_url}/>
+            <img className="unique"src={post.img_url} alt="unique"/>
             <p>{post.title}</p>
           </Link>
-          {currentUser?.id === post?.user_id ? <Link to={`/posts/${post.id}/edit`}><button>Edit</button></Link> && <button onClick={() => handlePostDelete(post.id)}>delete</button>
+          {currentUser?.id === post?.user_id ? <> <Link to={`/posts/${post.id}/edit`}><button>Edit</button></Link> 
+          <button onClick={() => handlePostDelete(post.id)}>Delete</button> </>
             :""}
 
         </div>
