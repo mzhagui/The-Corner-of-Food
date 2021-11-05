@@ -52,34 +52,40 @@ export default function PostDetail(props) {
       <img className="unique" src={postItem?.img_url} alt="uniquee" />
       <h1 >{postItem?.title}</h1>
       <p>{postItem?.address}</p>
-      <h3>{postItem?.food_description}</h3>
+      <h3 className="food-description">{postItem?.food_description}</h3>
       <div>
      
           <h1>Write a Review...</h1>
           <form onSubmit={handleSubmit}>
-            <input
-              className='input-name'
+          <input
+             type="number"
+             min="0"
+             max="5"
+              className='input-number'
               placeholder='Rating'
               value={reviews.rating}
               name='rating'
               required
               autoFocus
               onChange={handleChange}
-            />
-            <input
-              className='input-name'
+          />
+          <br />
+          <br/>
+            <textarea className="input-review"
               placeholder='Why you love it?'
               value={reviews.description}
               name='description'
               required
               autoFocus
-              onChange={handleChange}
-            />
-            <button>Submit Review</button>
+              onChange={handleChange}>
+          </textarea>
+          <br/>
+            <button className="review-button">Submit Review</button>
           </form>
       
-}
+
         <div>
+          <h1>Reviews</h1>
         {postItem?.reviews.map((post) => (
         <div className="posts"key={post.id}>
             <p>{post?.rating}</p>

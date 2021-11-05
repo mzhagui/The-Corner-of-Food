@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { newPost } from "../services/posts";
 import { Redirect } from "react-router";
+import './PostCreate.css'
 
 export default function PostCreate(props) {
   const [posts,setPosts] = useState({
@@ -33,7 +34,7 @@ export default function PostCreate(props) {
   return (
      <form
       onSubmit={handleSubmit}>
-      <h1>Create Food Post</h1>
+      <h1 className="create-title">Create Food Post</h1>
       <input
           className='input-title'
           placeholder='Title'
@@ -41,28 +42,32 @@ export default function PostCreate(props) {
           name='title'
           required
           autoFocus
-          onChange={handleChange}
+        onChange={handleChange}
       />
+      <br />
+
       <input
-          className='input-name'
+          className='input-title'
           placeholder='Address'
           value={posts.address}
           name='address'
           required
           autoFocus
-          onChange={handleChange}
+        onChange={handleChange}
       />
-      <input
-          className='input-name'
+      <br/>
+      <textarea type="text"
+          className='input-description'
           placeholder='Description'
           value={posts.food_description}
           name='food_description'
           required
           autoFocus
-          onChange={handleChange}
-      />
+          onChange={handleChange}>
+      </textarea>
+            <br/>
       <input
-          className='input-name'
+          className='input-title'
           placeholder='Image URL'
           value={posts.img_url}
           name='img_url'
@@ -71,7 +76,7 @@ export default function PostCreate(props) {
           onChange={handleChange}
         />
       <br />
-      <button>Submit</button>
+      <button className="create-button">Submit</button>
     </form>
   )
 }

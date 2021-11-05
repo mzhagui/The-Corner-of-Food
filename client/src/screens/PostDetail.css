@@ -6,3 +6,28 @@
 .h1-title{
   font-family: 'Raleway', sans-serif;
 }
+
+.input-number{
+  width:20%;
+  padding: 10px;
+}
+
+.input-review{
+  width:20%;
+  padding: 10px;
+}
+
+.review-button{
+  background-color: #8dd7cf;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 20%;
+}
+
+.food-description{
+  margin:0 5% 5% ;
+}
+
