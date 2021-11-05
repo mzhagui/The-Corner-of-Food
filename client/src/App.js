@@ -63,7 +63,7 @@ function App() {
           <PostDetail/>
         </Route>
         <Route path='/posts'>
-        <Posts  />
+        <Posts currentUser={currentUser} />
       </Route>
           <Route exact path='/login'>
             <Login handleLogin={handleLogin} />
