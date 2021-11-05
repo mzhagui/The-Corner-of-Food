@@ -12,6 +12,7 @@ export default function EditItem(props) {
   const [isUpdated, setUpdated] = useState(false);
 
   let { id } = useParams();
+  
   useEffect(() => {
     const fetchPost = async () => {
       const post = await getOnePost(id);
@@ -19,7 +20,7 @@ export default function EditItem(props) {
     };
     fetchPost();
   }, [id]);
-  
+
   const handleChange = (event) => {
     const { name, value } = event.target;
     setPost({
@@ -36,12 +37,11 @@ export default function EditItem(props) {
   if (isUpdated) {
     return <Redirect to={`/posts/${id}`} />;
   }
-console.log(post)
+// console.log(post)
   return (
     <div>
-        <div className="editItem">
-        <form
-      onSubmit={handleSubmit}>
+      <div className="editItem">
+      <form onSubmit={handleSubmit}>
       <h1>Edit Post</h1>
       <input
           className='input-name'

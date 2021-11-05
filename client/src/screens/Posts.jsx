@@ -14,10 +14,12 @@ export default function Posts(props) {
     };
     fetchPosts();
   }, []);
+
   const handlePostDelete = async (id) => {
     await deletePost(id);
     setPosts((prevState) => prevState.filter((post) => post.id !== id));
   };
+  
   return (
     <div>
     <h3 className="post_h3">Places to Eat</h3>
