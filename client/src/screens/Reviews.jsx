@@ -9,7 +9,7 @@ import { Redirect } from 'react-router';
 export default function Reviews(props) {
   const [postItem, setPostItem] = useState(null)
   const { id } = useParams()
-  const { currentUser } = props
+  const { currentUser, setCreated } = props
   const [reviews, setReviews] = useState({
     rating: "",
     description: "",
@@ -26,7 +26,7 @@ export default function Reviews(props) {
   }, [id]);
 
   
-  const [isCreated, setCreated] = useState(false);
+  // const [isCreated, setCreated] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -38,13 +38,10 @@ export default function Reviews(props) {
   const handleSubmit = async (event) => {
     event.preventDefault()
     const created = await newReview(reviews)
-    setCreated({ created })
+    setCreated( prevState => !prevState)
   }
 
-  if (isCreated) {
-    return <Redirect to={`/posts/${id}`} />
-  }
-
+  
 
   return (
    <div>

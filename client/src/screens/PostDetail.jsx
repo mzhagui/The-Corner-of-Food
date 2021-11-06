@@ -9,6 +9,7 @@ import StarRating from "./StarRating";
 
 export default function PostDetail(props) {
   const [postItem, setPostItem] = useState(null)
+  const [created, setCreated] = useState(false);
   const { id } = useParams()
   const { currentUser } = props
   // const [reviews, setReviews] = useState({
@@ -24,7 +25,7 @@ export default function PostDetail(props) {
       setPostItem(postData);
     };
     fetchPostItem();
-  }, [id]);
+  }, [id, created]);
 
   
   // const [isCreated, setCreated] = useState(false);
@@ -46,7 +47,7 @@ export default function PostDetail(props) {
   //   return <Redirect to={`/posts/${id}`} />
   // }
 
-  // console.log(postItem)
+  console.log(postItem)
   
 
   return (
@@ -55,7 +56,7 @@ export default function PostDetail(props) {
       <h1 >{postItem?.title}</h1>
       <h3>{postItem?.address}</h3>
       <p className="food-description">{postItem?.food_description}</p>
-      {currentUser ? <Reviews currentUser={currentUser} /> :  "" }
+      {currentUser ? <Reviews currentUser={currentUser} setCreated={setCreated} /> :  "" }
       {/* <div>
      
           <h1>Write a Review...</h1>
@@ -86,7 +87,6 @@ export default function PostDetail(props) {
             <button className="review-button">Submit Review</button>
           </form>
        */}
-
         <div className="all-reviews">
         <h1>Reviews</h1>
         <br/>
@@ -94,8 +94,8 @@ export default function PostDetail(props) {
         {postItem?.reviews.map((post) => (
           <div className="review-post" key={post.id}>
             <img src={user} />
-            <p>User {post?.user_id}</p>
-            <p>Posted on {post?.created_at}</p>
+            <p>User {post?.user.username}</p>
+            <p>Posted on {Date(post?.created_at).split('-')[0]}</p>
 
             <h3 className="rating">Rating <StarRating rating ={post?.rating} /></h3>
             <p>{post?.description}</p>
