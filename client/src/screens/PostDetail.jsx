@@ -12,13 +12,7 @@ export default function PostDetail(props) {
   const [created, setCreated] = useState(false);
   const { id } = useParams()
   const { currentUser } = props
-  // const [reviews, setReviews] = useState({
-  //   rating: "",
-  //   description: "",
-  //   post_id: id,
-  //   user_id: currentUser.id
-  // })
-
+ 
   useEffect(() => {
     const fetchPostItem = async () => {
       const postData = await getOnePost(id);
@@ -27,79 +21,37 @@ export default function PostDetail(props) {
     fetchPostItem();
   }, [id, created]);
 
-  
-  // const [isCreated, setCreated] = useState(false);
-
-  // const handleChange = (e) => {
-  //   const { name, value } = e.target;
-  //   setReviews({
-  //     ...reviews,
-  //     [name]: value
-  //   });
-  // };
-  // const handleSubmit = async (event) => {
-  //   event.preventDefault()
-  //   const created = await newReview(reviews)
-  //   setCreated({ created })
-  // }
-
-  // if (isCreated) {
-  //   return <Redirect to={`/posts/${id}`} />
-  // }
-
-  console.log(postItem)
-  
-
   return (
     <div className="h1-title">
-      <img className="unique" src={postItem?.img_url} alt="uniquee" />
-      <h1 >{postItem?.title}</h1>
+      <div className="content-div">
+        <div className="image-div">
+        <img className="unique" src={postItem?.img_url} alt="uniquee" />
+        </div>
+      <div className="info-div">
+      <h1 className="h1-desciption">{postItem?.title}</h1>
       <h3>{postItem?.address}</h3>
-      <p className="food-description">{postItem?.food_description}</p>
+        <p className="food-description">{postItem?.food_description}</p>
+        </div>
+        </div>
       {currentUser ? <Reviews currentUser={currentUser} setCreated={setCreated} /> :  "" }
-      {/* <div>
-     
-          <h1>Write a Review...</h1>
-          <form onSubmit={handleSubmit}>
-          <input
-             type="number"
-             min="0"
-             max="5"
-              className='input-number'
-              placeholder='Rating'
-              value={reviews.rating}
-              name='rating'
-              required
-              autoFocus
-              onChange={handleChange}
-          />
-          <br />
-          <br/>
-            <textarea className="input-review"
-              placeholder='Why you love it?'
-              value={reviews.description}
-              name='description'
-              required
-              autoFocus
-              onChange={handleChange}>
-          </textarea>
-          <br/>
-            <button className="review-button">Submit Review</button>
-          </form>
-       */}
         <div className="all-reviews">
-        <h1>Reviews</h1>
+        <h1 className="review-h1">Reviews</h1>
         <br/>
         <div className="review-map">
         {postItem?.reviews.map((post) => (
           <div className="review-post" key={post.id}>
-            <img src={user} />
-            <p>User {post?.user.username}</p>
-            <p>Posted on {Date(post?.created_at).split('-')[0]}</p>
+           <div className="user-info">
+            <img className="img-user"src={user} />
+              <p className="username">{post?.user.username}</p>
+              <p className="date">Posted on {Date(post?.created_at).split('-')[0]}</p>
 
-            <h3 className="rating">Rating <StarRating rating ={post?.rating} /></h3>
+              </div>
+<div className="rating-div">
+              <span className="rating"> <StarRating rating={post?.rating}  /></span>
+            </div>
+            <div className="description-review">
             <p>{post?.description}</p>
-
+</div>
         </div>
         ))}
           </div>

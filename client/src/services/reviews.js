@@ -5,7 +5,3 @@ export const newReview = async (reviewData) => {
   return resp.data;
 };
 
-export const deleteReviews = async (id) => {
-  const resp = await api.delete(`/reviews/${id}`);
-  return resp;
-};

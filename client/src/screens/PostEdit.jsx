@@ -37,50 +37,50 @@ export default function EditItem(props) {
   if (isUpdated) {
     return <Redirect to={`/posts/${id}`} />;
   }
-// console.log(post)
+
   return (
     <div>
       <div className="editItem">
       <form onSubmit={handleSubmit}>
-      <h1>Edit Post</h1>
+      <h1 className="create-title">Edit Post</h1>
       <input
-          className='input-name'
+          className='input-title'
           placeholder='Title'
           value={post.title}
           name='title'
           required
           autoFocus
           onChange={handleChange}
-      />
+          />
+          <br/>
       <input
-          className='input-name'
+          className='input-title'
           placeholder='Address'
           value={post.address}
           name='address'
           required
-          autoFocus
           onChange={handleChange}
-      />
+          />
+          <br />
       <input
-          className='input-name'
+          className='input-description'
           placeholder='Description'
           value={post.food_description}
           name='food_description'
           required
-          autoFocus
           onChange={handleChange}
-      />
+          />
+                    <br/>
       <input
-          className='input-name'
+          className='input-title'
           placeholder='Image URL'
           value={post.img_url}
           name='img_url'
           required
-          autoFocus
           onChange={handleChange}
         />
       <br />
-      <button>Save</button>
+      <button className="create-button">Save</button>
     </form>
         </div>
     </div>

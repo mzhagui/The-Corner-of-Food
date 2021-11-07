@@ -1,9 +1,19 @@
 .unique{
-  height:400px;
-  width: 400px;
+  height:500px;
+  width: 500px;
+  margin-right: 50px;
+}
+.image-div{
+  display: flex;
+  margin-left:40px;
+
+}
+.content-div{
+  display: flex;
 }
 
 .h1-title{
+  margin: 5%;
   font-family: 'Raleway', sans-serif;
 }
 
@@ -15,6 +25,10 @@
 .input-review{
   width:20%;
   padding: 10px;
+}
+.review-h1{
+  padding-top: 60px;
+  height: 20px;
 }
 
 .review-button{
@@ -28,18 +42,51 @@
 }
 
 .review-map{
-  display: flex;
   justify-content: space-around;
 }
+.review-post{
+  border: 3px solid #608b87;
+  margin-bottom:20px;
+  display: flex;
+  flex-direction: column;
+  margin-right: 50px;
+  padding-left: 30px;
+}
 
+.user-info{
+  display: flex;
+}
+.rating-div{
+  display: flex;
+}
+.img-user{
+  margin-right: 10px;
+}
+.h1-desciption{
+  font-size:40px;
+}
+.username{
+  font-weight:bold;
+  font-size: 20px;
+}
+.rating-div{
+  width: 100px;
+}
 .food-description{
   margin:0 5% 5% ;
   font-size: 20px;
+  line-height: 1.6;
 }
-
+.write{
+  padding-top: 60px;
+}
+.date{
+  margin-left: 50%;
+}
 .all-reviews{
- display: flex;
- flex-direction: row;
+  float: left;
+  margin-left: 5%;
+  width: 90%;
 }
 
 .rating{
@@ -47,8 +94,10 @@
 }
 .starrating{
   display: flex;
-  flex-direction: row;
-  justify-content: center;
   margin-top:20px;
-  margin-bottom: 20px;
+}
+
+.description-review{
+  display: flex;
+  justify-content: flex-start;
 }

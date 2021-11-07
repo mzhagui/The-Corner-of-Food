@@ -1,13 +1,21 @@
 .post_container{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
 }
 
-.post_h3{
+h4.post_h3{
   font-family: 'Raleway', sans-serif;
-  font-weight: 28px;
-
+  font-size: 40px;
+   margin-bottom: 40px;
 }
+
+.unique-photo{
+  width:350px;
+  height: 350px;
+}
+
+
 
 .post_title{
   font-family: 'Raleway', sans-serif;
@@ -41,4 +49,17 @@
   padding-left: 16px;     /* make text start to the right of the image */
   vertical-align: middle;
   margin: 5px;
+}
+
+
+@media only screen and (max-width: 750px) {
+  .post_container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5px;
+  }
+.unique-photo{
+  height: 300px;
+  width:300px;
+}
 }

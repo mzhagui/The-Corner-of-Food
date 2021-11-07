@@ -52,7 +52,6 @@ export default function PostCreate(props) {
           value={posts.address}
           name='address'
           required
-          autoFocus
         onChange={handleChange}
       />
       <br/>
@@ -62,7 +61,6 @@ export default function PostCreate(props) {
           value={posts.food_description}
           name='food_description'
           required
-          autoFocus
           onChange={handleChange}>
       </textarea>
             <br/>
@@ -72,7 +70,6 @@ export default function PostCreate(props) {
           value={posts.img_url}
           name='img_url'
           required
-          autoFocus
           onChange={handleChange}
         />
       <br />

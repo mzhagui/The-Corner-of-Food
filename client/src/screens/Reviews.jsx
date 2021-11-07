@@ -2,8 +2,7 @@ import { useState, useEffect } from 'react'
 import { useParams } from 'react-router'
 import { getOnePost } from '../services/posts';
 import './PostDetail.css'
-import { newReview, deleteReviews } from '../services/reviews';
-import { Redirect } from 'react-router';
+import { newReview } from '../services/reviews';
 
 
 export default function Reviews(props) {
@@ -25,9 +24,6 @@ export default function Reviews(props) {
     fetchPostItem();
   }, [id]);
 
-  
-  // const [isCreated, setCreated] = useState(false);
-
   const handleChange = (e) => {
     const { name, value } = e.target;
     setReviews({
@@ -41,12 +37,10 @@ export default function Reviews(props) {
     setCreated( prevState => !prevState)
   }
 
-  
-
   return (
    <div>
      
-          <h1>Write a Review...</h1>
+          <h1 className="write">Write a Review...</h1>
           <form onSubmit={handleSubmit}>
           <input
              type="number"

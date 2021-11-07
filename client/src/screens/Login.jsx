@@ -30,9 +30,8 @@ export default function Login(props) {
     <form onSubmit={(e) => {
         e.preventDefault();
         handleLogin(formData);
-      }}
-    >
-          <h3>Login</h3>
+      }}>
+      <h3>Login</h3>
       <label>
             Username:
             <input
@@ -57,7 +56,6 @@ export default function Login(props) {
       <br />
       Not a Member Yet? <Link to='/register'>Register</Link>
       <button className="login_button">Sign In</button>
-
         </form>
         </div>
       </div>
