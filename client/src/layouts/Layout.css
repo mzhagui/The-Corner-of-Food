@@ -38,3 +38,18 @@ a{
   font-weight: 700;
 
 }
+
+@media only screen and (max-width: 400px) {
+  .nav {
+    bottom:-5em;
+    left:3em;
+    font-size:15px;
+    padding:10px;
+
+  }
+  .main_title{
+    font-size: 25px;
+    margin-right:10px;
+
+  }
+}
