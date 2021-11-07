@@ -67,8 +67,8 @@ h4.post_h3{
 @media only screen and (max-width: 450px) {
   .post_container {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    }
+    grid-template-columns: 1fr;
+  }
 .unique-photo{
   height: 200px;
   width:200px;

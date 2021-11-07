@@ -22,8 +22,8 @@ export default function Layout(props) {
         )}
         <hr />
         {currentUser && (
-          <div>
-            <p>Welcome, {currentUser.username}</p>
+          <div className="current-user">
+            <p className="current-user">Welcome, {currentUser.username}</p>
             <button  className= "logout" onClick={handleLogout}>Logout</button>
 
           </div>

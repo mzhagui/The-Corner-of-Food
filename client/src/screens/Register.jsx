@@ -27,7 +27,7 @@ export default function Register(props) {
       <img className="login_image"src={register} alt="login"/>
     </div>
     <div className="info_login">
-    <form
+    <form className="login-form"
       onSubmit={(e) => {
         e.preventDefault();
         handleRegister(formData);

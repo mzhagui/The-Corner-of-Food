@@ -1,6 +1,6 @@
 .link-a{
   position: absolute;
-  bottom:6em;
+  bottom:2em;
   left:15em;
   background-color: #62aaa3;
   color:white;
@@ -11,7 +11,7 @@
 
   @media only screen and (max-width: 800px) {
     .link-a {
-      bottom:6em;
+      bottom:2em;
       left:3em;
 
     }
@@ -20,7 +20,7 @@
 
   @media only screen and (max-width: 400px) {
     .link-a {
-      bottom:4em;
+      bottom:5em;
       left:2em;
 
     }

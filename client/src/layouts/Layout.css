@@ -38,6 +38,25 @@ a{
   font-weight: 700;
 
 }
+@media only screen and (max-width: 600px) {
+  .nav{
+    font-size:20px
+  }
+  a.main-title{
+    font-size: 10px;
+
+
+  }
+}
+@media only screen and (max-width: 400px) {
+  .nav{
+    padding:25px;
+  }
+
+  .current-user{
+    margin-left:15px;
+  }
+}
 
 @media only screen and (max-width: 400px) {
   .nav {

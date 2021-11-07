@@ -27,7 +27,7 @@ export default function Login(props) {
         <img className="login_image"src={login} alt="login"/>
       </div>
       <div className="info_login">
-    <form onSubmit={(e) => {
+    <form className="login-form" onSubmit={(e) => {
         e.preventDefault();
         handleLogin(formData);
       }}>
