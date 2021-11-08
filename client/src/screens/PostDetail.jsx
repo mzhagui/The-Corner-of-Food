@@ -41,7 +41,7 @@ export default function PostDetail(props) {
         {postItem?.reviews.map((post) => (
           <div className="review-post" key={post.id}>
            <div className="user-info">
-            <img className="img-user"src={user} />
+            <img className="img-user"src={user} alt="user-tag" />
               <p className="username">{post?.user.username}</p>
               <p className="date">Posted on {(post?.created_at).split('T')[0]}</p>
 
