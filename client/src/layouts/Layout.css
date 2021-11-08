@@ -44,13 +44,11 @@ a{
   }
   a.main-title{
     font-size: 10px;
-
-
   }
 }
 @media only screen and (max-width: 400px) {
   .nav{
-    padding:20px;
+    padding:25px;
   }
 
   .current-user{
@@ -63,7 +61,7 @@ a{
     bottom:-5em;
     left:3em;
     font-size:15px;
-    padding:10px;
+    padding:25px;
 
   }
   .main_title{
