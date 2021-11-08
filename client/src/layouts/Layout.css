@@ -8,7 +8,7 @@ height:100vh;
   display: flex;
   font-family: 'Raleway', sans-serif;
   align-items: center;
-  padding:25px;
+  padding:20px;
   font-size:20px;
   text-decoration: none;
 }
@@ -48,7 +48,7 @@ a{
 }
 @media only screen and (max-width: 400px) {
   .nav{
-    padding:25px;
+    padding:20px;
   }
 
   .current-user{
@@ -61,7 +61,7 @@ a{
     bottom:-5em;
     left:3em;
     font-size:15px;
-    padding:25px;
+    padding:20px;
 
   }
   .main_title{
