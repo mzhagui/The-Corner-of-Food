@@ -43,7 +43,7 @@ export default function PostDetail(props) {
            <div className="user-info">
             <img className="img-user"src={user} />
               <p className="username">{post?.user.username}</p>
-              <p className="date">Posted on {Date(post?.created_at).split('-')[0]}</p>
+              <p className="date">Posted on {(post?.created_at).split('T')[0]}</p>
 
               </div>
 <div className="rating-div">
