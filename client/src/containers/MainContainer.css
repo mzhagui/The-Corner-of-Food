@@ -20,7 +20,7 @@
 
   @media only screen and (max-width: 400px) {
     .link-a {
-      bottom:5em;
+      bottom:-2em;
       left:2em;
 
     }
